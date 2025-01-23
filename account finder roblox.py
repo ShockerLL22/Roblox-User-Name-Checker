@@ -59,7 +59,7 @@ def check_username(csrf_token):
             else:
                 print(colored(f"[-] {username} ", 'red'))  
         else:
-            print(f"Error for username {username}: {response.status_code}, {response.text}")
+            csrf_token = get_csrf_token()
     except Exception as e:
         print(f"Exception occurred: {e}")
 def run_loop():
